@@ -1,6 +1,6 @@
 # blacksprider 0.2
 针对网页关键词查询的简单爬虫，仅供用于学习交流
-![blackspider.png](blackspider.png)
+![blackspider.png](/blackspider.png)
 ### 环境
 * python 推荐使用3.9.9版本
 * argparse，urllib，bs4库
