@@ -73,7 +73,8 @@ def get_tag(file,tag):
 
 # keyword多查询与单查询函数
 def bool_keyword(the_keyword,text):
-    if type(the_keyword) == tuple:
+    the_keyword = the_keyword.split(",")
+    if len(the_keyword) != 1:
         bool_key = True
         for i in the_keyword:
             if i not in text:
