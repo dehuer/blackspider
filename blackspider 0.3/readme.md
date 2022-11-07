@@ -10,7 +10,7 @@
                                         ||
                                        .||
 地  址：https://github.com/CryingN/blackspider
-版本号：0.3
+版本号：0.3.1
 邮  箱：CryingNights7v@gmail.com
 =========================================================================
 ```
@@ -23,6 +23,12 @@
 ```bash
 pip install -i https://pypi.mirrors.ustc.edu.cn/simple/ urllib3==1.26.12
 pip install -i https://pypi.mirrors.ustc.edu.cn/simple/ bs4==0.0.1
+```
+## 0.3.1 BUG修复
+因理解偏差，经检验0.3以前无法直接在终端中使用多关键词查询，现已修复bug；
+同时源代码中不再支持tuple格式进行多关键词查询，多关键词查询可在str格式中用","进行分割，如下例子：
+```python
+keyword:str = 'Auto,SQL,tool'
 ```
 ## 0.3版本使用说明书
 ### 使用示例
