@@ -10,10 +10,10 @@ file:str = None             #'百度'
 file_name:str = None        #'百度'
 tag:str = 'body'             #'tr'
 attrname:str = None         #'type','text','src'
-keyword = None              #'Auto','SQL','tool'                 #关键词
+keyword = None              #'Auto,SQL,tool'                 #关键词
 picture_dic = []
 
-number = "0.3"
+number = "0.3.1"
 choose_true = ('yes','y','Y')
 # logo
 logo = """
