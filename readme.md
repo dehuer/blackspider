@@ -1,5 +1,7 @@
 # blacksprider
+
 针对网页关键词查询的简单爬虫，仅供用于学习交流
+
 ```bash
 =========================================================================
 '||'''|,'||`            '||     .|'''|.            ..     ||`            
@@ -10,32 +12,121 @@
                                         ||
                                        .||
 地  址：https://github.com/CryingN/blackspider
-版本号：0.3.1
+版本号：1.0.2
 邮  箱：CryingNights7v@gmail.com
 =========================================================================
 ```
+
 ![blackspider.png](blackspider.png)
+
 ### 环境
+
 * python 推荐使用3.9.9版本
+
 * argparse，urllib，bs4库
+
 ### 环境布置方式
+
 下载[python](https://www.python.org/downloads/),在cmd或者powershell使用pip命令布置第三方库,推荐使用国内镜像源进行下载，这里使用中科大源：
+
 ```bash
 pip install -i https://pypi.mirrors.ustc.edu.cn/simple/ urllib3==1.26.12
 pip install -i https://pypi.mirrors.ustc.edu.cn/simple/ bs4==0.0.1
 ```
+
+## 1.0.2版本使用说明书
+
+这是一次很大胆的更新,从版本号就可以想到在大家看不见的地方我进行了多次重写,至少现在的逻辑与以前发布出来的版本有了很大不同.
+
+值得一提的是大版本更新后不代表错误比以前少,相反在实操中可能会出现更多问题,但是随着更新,代码的使用维护将会越来越容易.
+
+### 更新内容
+
+重构了部分代码,简化了部分操作;
+
+采用单文件`.Manage.ini`存放字典;
+
+使用`Manage.py`管理文件页,`blackspider.py`调试代码,`main.py`执行代码
+
+### 使用示例
+
+```bash
+python main.py -f blackarch -t tr -a text -k log4j
+```
+
+## 0.4版本使用说明书
+
+### 更新内容
+
+  修复了部分不能正常查询的bug；
+
+  更新了blackspider的管理方式；
+
+  现在blackspider正尝试向linux看齐。
+
 ## 0.3.1 BUG修复
-因理解偏差，经检验0.3以前无法直接在终端中使用多关键词查询，现已修复bug；
-同时源代码中不再支持tuple格式进行多关键词查询，多关键词查询可在str格式中用","进行分割，如下例子：
+
+  因理解偏差，经检验0.3以前无法直接在终端中使用多关键词查询，现已修复bug；
+  同时源代码中不再支持tuple格式进行多关键词查询，多关键词查询可在str格式中用","进行分割，如下例子：
+
 ```python
 keyword:str = 'Auto,SQL,tool'
 ```
+
 ## 0.3版本使用说明书
+
 ### 使用示例
-$\color{#FF0000}使用须知：为维护网络环境，切勿对同一网站进行多次访问。$
+
+  $\color{#FF0000}使用须知：为维护网络环境，切勿对同一网站进行多次访问。$
+
 ```bash
 usage: blackspider.py [-h] [--url URL] [--file FILE] [--file_name FILE_NAME] [--tag TAG]
-                      [--attrname ATTRNAME] [--keyword KEYWORD]
+                    [--attrname ATTRNAME] [--keyword KEYWORD]
+```
+
+* python 推荐使用3.9.9版本
+
+* argparse，urllib，bs4库
+
+### 环境布置方式
+
+下载[python](https://www.python.org/downloads/),在cmd或者powershell使用pip命令布置第三方库,推荐使用国内镜像源进行下载，这里使用中科大源：
+
+```bash
+pip install -i https://pypi.mirrors.ustc.edu.cn/simple/ urllib3==1.26.12
+pip install -i https://pypi.mirrors.ustc.edu.cn/simple/ bs4==0.0.1
+```
+
+## 0.4版本使用说明书
+
+### 更新内容
+
+修复了部分不能正常查询的bug；
+
+更新了blackspider的管理方式；
+
+现在blackspider正尝试向linux看齐。
+
+## 0.3.1 BUG修复
+
+  因理解偏差，经检验0.3以前无法直接在终端中使用多关键词查询，现已修复bug；
+  同时源代码中不再支持tuple格式进行多关键词查询，多关键词查询可在str格式中用","进行分割，如下例子：
+
+```python
+keyword:str = 'Auto,SQL,tool'
+```
+
+## 0.3版本使用说明书
+
+### 使用示例
+
+  $\color{#FF0000}使用须知：为维护网络环境，切勿对同一网站进行多次访问。$
+
+```bash
+usage: blackspider.py [-h] [--url URL] [--file FILE] [--file_name FILE_NAME] [--tag TAG]
+                    [--attrname ATTRNAME] [--keyword KEYWORD]
+```
+
 optional arguments:
   -h, --help            show this help message and exit
   --url URL             网站ip地址，例如：--url 'http://www.baidu.com'
@@ -46,6 +137,7 @@ optional arguments:
   --attrname ATTRNAME   查询tag节点元素，默认None查询全部，'text'为查询文本，下载图片为：--tag 'img' --attrname
                         'src'
   --keyword KEYWORD     索引关键词,若默认为None则全部查询，例如：--keyword 'Auto','SQL','tool'
+
 ```
 ### 更新内容
 * 添加了虽然没什么用但是可以看起来很酷炫的logo；
@@ -58,7 +150,9 @@ optional arguments:
 ```bash
 py blackspider.py --url 'http://www.baidu.com' --file_name '百度' --tag 'a' --attrname 'text' --keyword '百度' 
 ```
+
 返还值：
+
 ```bash
 =========================================================================
  '||'''|,'||`            '||     .|'''|.            ..     ||`
@@ -77,11 +171,15 @@ py blackspider.py --url 'http://www.baidu.com' --file_name '百度' --tag 'a' --
  关于百度
 使用百度前必读 
 ```
+
 #### 对文件爬取
+
 ```bash
 py blackspider.py --file '百度' --tag 'img' --attrname 'src'
 ```
+
 返还值：
+
 ```bash
 =========================================================================
 '||'''|,'||`            '||     .|'''|.            ..     ||`
@@ -95,6 +193,7 @@ py blackspider.py --file '百度' --tag 'img' --attrname 'src'
 版本号：0.3
 邮  箱：CryingNights7v@gmail.com
 =========================================================================
+
 [True] 已找到源网站地址
 [True] 文件打开成功
 [True] 已从原文档中获取
@@ -144,12 +243,17 @@ http://ss.bdimg.com/static/superman/img/qrcode/qrcode-hover@2x-f9b106a848.png
 [True] 获取图片(18/18)
 [True] 已完成图片保存
 ```
+
 ## 0.2版本使用说明书
+
 ### 使用示例
+
 $\color{#FF0000}使用须知：为维护网络环境，切勿对同一网站进行多次访问。$
+
 ```bash
 usage: blackspider.py [-h] [--url URL] [--file FILE] [--file_name FILE_NAME] [--tag TAG]
                       [--attrname ATTRNAME] [--keyword KEYWORD]
+
 optional arguments:
   -h, --help            show this help message and exit
   --url URL             网站ip地址
@@ -160,12 +264,16 @@ optional arguments:
   --attrname ATTRNAME   查询tag节点元素，默认None查询全部，可选择查询：class或text
   --keyword KEYWORD     索引关键词,若默认为None则全部查询
 ```
+
 #### 查询网页并生成文件
+
 ```bash
 # 查询百度并生成“百度.html”文件
 py blackspider.py --url 'http://www.baidu.com' --file_name '百度.html' --tag 'a' --attrname 'text' --keyword '百度'
 ```
+
 返还值：
+
 ```bash
 [True] 获取源代码成功
 [True] 已创建百度.html文档
@@ -177,12 +285,16 @@ py blackspider.py --url 'http://www.baidu.com' --file_name '百度.html' --tag '
 关于百度
 使用百度前必读
 ```
+
 #### 查询文件
+
 ```bash
 # 从上面网页生成的文件进行查询
 py blackspider.py --file '百度.html' --tag 'a' --attrname 'text' --keyword '百度'
 ```
+
 返还值：
+
 ```bash
 [True] 文件打开成功
 [True] 已从原文档中获取
