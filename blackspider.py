@@ -110,19 +110,18 @@ def get_data(file,url):
 
 if __name__ == "__main__":
     dictionary.read('.Manage.ini',encoding="utf-8")
-    if file == None:
-        if url == None:
-            print(false+"请至少输入url或文件名称")
-            exit()
-        else:
-            try:
-                file = get_file(url)
-                data = get_data(file,url)
-                dictionary.set("test",file,url)
-                dictionary.write(open(".Manage.ini",mode="w",encoding="utf-8"))
-                print(true+"已更新字典{file}:{url}".format(file=file,url=url))
-            except:
-                print(warn+"无法设置文件名,请检查url格式")
+    if file == None and url == None:
+        print(false+"请至少输入url或文件名称")
+        exit()
+    elif file == None and url != None:
+        try:
+            file = get_file(url)
+            data = get_data(file,url)
+            dictionary.set("test",file,url)
+            dictionary.write(open(".Manage.ini",mode="w",encoding="utf-8"))
+            print(true+"已更新字典{file}:{url}".format(file=file,url=url))
+        except:
+            print(warn+"无法设置文件名,请检查url格式")
     else:
         try:
             url_test = dictionary.get("test",file)
